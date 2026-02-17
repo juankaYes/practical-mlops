@@ -1,8 +1,7 @@
 name: Python CI
 
 on:
-  push:
-  pull_request:
+  [push]
 
 jobs:
   build:
@@ -25,3 +24,19 @@ jobs:
 
       - name: Run tests
         run: make test
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.5"
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Run linter
+        run: make lint
+
+      - name: Run tests
+        run: make test
+
+        
