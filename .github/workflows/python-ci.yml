@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.5, 3.11]
+        python-version: [3.11, 3.5]
 
     steps:
       - name: Checkout repository
